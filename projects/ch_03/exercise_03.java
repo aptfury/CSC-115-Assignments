@@ -19,13 +19,8 @@ public class Exercise {
             }
 
             case 2: {
-                if (year % 4 == 0) {
-                    if (year == 2200) {
-                        System.out.println(String.format(template + "February220028", "February", year, 29));
-                    }
-                    else {
-                        System.out.println(String.format(template, "February", year, 29));
-                    }
+                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                    System.out.println(String.format(template, "February", year, 29));
                 }
                 else {
                     System.out.println(String.format(template, "February", year, 28));
